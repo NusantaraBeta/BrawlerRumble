@@ -1,6 +1,6 @@
 BrawlerRumble
 =============
 
-Nusantara Beta BrawlerRumble Game Project
+Brawler Rumble Game Project
 
 This game are Private Assets of Nusantara Beta Studio
