@@ -1,0 +1,116 @@
+fileFormatVersion: 2
+guid: 0707d86f30e305046a35cf9d1757f16a
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: tailblade
+    100002: rotablade
+    100004: Missile8
+    100006: Missile7
+    100008: Missile6
+    100010: Missile5
+    100012: Missile4
+    100014: Missile3
+    100016: Missile2
+    100018: Missile1
+    100020: body
+    100022: //RootNode
+    400000: tailblade
+    400002: rotablade
+    400004: Missile8
+    400006: Missile7
+    400008: Missile6
+    400010: Missile5
+    400012: Missile4
+    400014: Missile3
+    400016: Missile2
+    400018: Missile1
+    400020: body
+    400022: //RootNode
+    2300000: tailblade
+    2300002: rotablade
+    2300004: Missile8
+    2300006: Missile7
+    2300008: Missile6
+    2300010: Missile5
+    2300012: Missile4
+    2300014: Missile3
+    2300016: Missile2
+    2300018: Missile1
+    2300020: body
+    3300000: tailblade
+    3300002: rotablade
+    3300004: Missile8
+    3300006: Missile7
+    3300008: Missile6
+    3300010: Missile5
+    3300012: Missile4
+    3300014: Missile3
+    3300016: Missile2
+    3300018: Missile1
+    3300020: body
+    4300000: body
+    4300002: Missile1
+    4300004: Missile2
+    4300006: Missile3
+    4300008: Missile4
+    4300010: Missile5
+    4300012: Missile6
+    4300014: Missile7
+    4300016: Missile8
+    4300018: rotablade
+    4300020: tailblade
+    11100000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 45
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

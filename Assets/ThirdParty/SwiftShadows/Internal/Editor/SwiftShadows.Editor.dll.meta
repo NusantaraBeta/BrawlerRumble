@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 3a9d7ee2b8a929e4da5db407dfba4d29
+labels:
+- Shadow
+- Fast
+- Drawcall
+- Mobile
+- Light
+MonoAssemblyImporter:
+  serializedVersion: 1
+  iconMap: {}
+  executionOrder: {}
+  userData: 
