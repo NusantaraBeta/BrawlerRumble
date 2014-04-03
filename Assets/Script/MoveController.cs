@@ -8,23 +8,13 @@ public class MoveController : MonoBehaviour {
 	private Vector2 absJoyPos;
 
 	private Transform cameraTransform, thisTransform;
-	private CharacterController playerController;
-
+	private Rigidbody playerRigidbody;
 
 	void Awake () {
 		cameraTransform = GameObject.FindWithTag("MainCamera").transform;
 
 		thisTransform = transform;
-		playerController = this.GetComponent<CharacterController>();
-	}
-
-	void FaceMovementDirection()
-	{	
-		horizontalVelocity = playerController.velocity;
-		horizontalVelocity.y = 0;
-		
-		if ( horizontalVelocity.magnitude > 0.1 )
-			thisTransform.forward = horizontalVelocity.normalized;
+		playerRigidbody = this.GetComponent<Rigidbody>();
 	}
 
 	public void Move( float xAxis, float yAxis, float speed)
@@ -32,15 +22,11 @@ public class MoveController : MonoBehaviour {
 		movement = cameraTransform.TransformDirection(new Vector3( xAxis, 0, yAxis ) );
 		movement.y = 0;
 		movement.Normalize(); 
-		
-		movement *= speed;
-		
-		movement += Physics.gravity;
-		movement *= Time.deltaTime;
-		
-		playerController.Move( movement*speed );
-		
-		FaceMovementDirection();
+
+		playerRigidbody.MovePosition(rigidbody.position + movement*speed );
+
+		thisTransform.forward = movement;
+
 	}
 
 

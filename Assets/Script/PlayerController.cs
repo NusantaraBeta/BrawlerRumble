@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour {
 
 	private bool isHold = false;
 	private float holdTime=0f;
+	public float holdTimeNeeded;
 
 	public void Attack()
 	{
@@ -75,11 +76,16 @@ public class PlayerController : MonoBehaviour {
 
 	void LateUpdate()
 	{
-		if(holdTime>0.5f)
+		if(holdTime>=holdTimeNeeded)
 		{
 			SpecialAttack();
 			isHold = false;
 			holdTime = 0;
 		}
+	}
+
+	void OnTriggerEnter(Collider collisionObject)
+	{
+
 	}
 }
