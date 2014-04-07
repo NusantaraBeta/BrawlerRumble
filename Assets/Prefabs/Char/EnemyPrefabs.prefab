@@ -8,10 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400002}
-  - 136: {fileID: 13600000}
-  - 54: {fileID: 5400000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 143: {fileID: 14300000}
   m_Layer: 9
   m_Name: EnemyPrefabs
   m_TagString: Enemy
@@ -1031,21 +1030,6 @@ Transform:
   m_Children:
   - {fileID: 400016}
   m_Father: {fileID: 400032}
---- !u!54 &5400000
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  serializedVersion: 2
-  m_Mass: 100
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2
@@ -1082,9 +1066,9 @@ MonoBehaviour:
   _lightVector: {x: 0, y: -1, z: 0}
   _lightVectorSource: 0
   _lightSourceObject: {fileID: 0}
-  _projectionDistance: 50
+  _projectionDistance: 1
   _shadowOffset: .00999999978
-  _shadowSize: 4.43824005
+  _shadowSize: 4.28281021
   _material: {fileID: 2100000, guid: 9f7a3b5781370b548a24b7a16f7d71ab, type: 2}
   _textureUVRect:
     serializedVersion: 2
@@ -1112,19 +1096,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   speed: 0
---- !u!136 &13600000
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1
-  m_Height: 4
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.89999998, z: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1186,6 +1157,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -.230808496, y: -.00023303926, z: .012406528}
     m_Extent: {x: .593265831, y: .382633209, z: .311985523}
   m_DirtyAABB: 0
+--- !u!143 &14300000
+CharacterController:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  serializedVersion: 2
+  m_Height: 4
+  m_Radius: 1.20000005
+  m_SlopeLimit: 45
+  m_StepOffset: .300000012
+  m_SkinWidth: .0799999982
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

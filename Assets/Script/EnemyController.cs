@@ -5,9 +5,9 @@ public class EnemyController : MonoBehaviour {
 	public int health;
 	public float speed;
 
-	void OnTriggerEnter(Collider collisionObject)
-	{
-		Debug.Log("Kena Collider" + collisionObject);
-	}
 
+	void OnCollisionEnter(Collision collisionObject)
+	{
+		Debug.Log("Kena Collision" + collisionObject);
+	}
 }
