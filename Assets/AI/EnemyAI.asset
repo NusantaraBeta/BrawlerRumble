@@ -1,0 +1,504 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fcacf5c6e8d7204e9c51e9ea4b453a0, type: 3}
+  m_Name: EnemyAI
+  m_EditorClassIdentifier: 
+  states:
+  - {fileID: 11400002}
+  - {fileID: 11400004}
+  - {fileID: 11400010}
+  - {fileID: 11400020}
+  - {fileID: 11400044}
+  parameters:
+  - {fileID: 11400008}
+  runtimeAnimatorController: {fileID: 0}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ffa838b096b844eae0b690be376f70, type: 3}
+  m_Name: AnyState
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 116
+    y: 46.5
+    width: 150
+    height: 30
+  id: d6839e6e-8a2e-4035-b354-904466737980
+  isDefaultState: 0
+  transitions:
+  - {fileID: 11400054}
+  actions: []
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f8edc712d25cf41a6eb662a3494038, type: 3}
+  m_Name: Simple
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 195
+    y: 223
+    width: 150
+    height: 30
+  id: c9152ea9-7026-4fd9-bcdd-e6390d0d6731
+  isDefaultState: 1
+  transitions:
+  - {fileID: 11400012}
+  actions:
+  - {fileID: 11400006}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb24976c8de0ca041956b05d462f78f1, type: 3}
+  m_Name: GameObject.FindGameObject
+  m_EditorClassIdentifier: 
+  gameObject: Owner
+  queue: 0
+  tag: Player
+  store: Player
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda3b1b6be2fc434ab3a7206b1fb9361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userVariable: 0
+  parameterName: Player
+  value: {fileID: 0}
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c969d2470daab3449a3ba596be5eed1, type: 3}
+  m_Name: Follow
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 466
+    y: 270
+    width: 150
+    height: 30
+  id: 4b960b70-e7cf-44a4-88f7-e7166de14458
+  isDefaultState: 0
+  transitions:
+  - {fileID: 11400022}
+  actions:
+  - {fileID: 11400016}
+  speed: 6
+  rotation: 360
+  applyRootMotion: 0
+  target: Player
+  jumpState: 
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 11400004}
+  toState: {fileID: 11400010}
+  conditions:
+  - {fileID: 11400014}
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fb4a08769880041963c79069f2de30, type: 3}
+  m_Name: IsNull
+  m_EditorClassIdentifier: 
+  target: Player
+  equals: 0
+--- !u!114 &11400016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5b21ca5982449a4f82cc38920537a93, type: 3}
+  m_Name: Animator.SetBool
+  m_EditorClassIdentifier: 
+  gameObject: Owner
+  queue: 0
+  value: {fileID: 11400018}
+  parameterName: isRun
+--- !u!114 &11400018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90978b69f7230544c85d1b49657db3d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userVariable: 1
+  parameterName: 
+  value: 1
+--- !u!114 &11400020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f8edc712d25cf41a6eb662a3494038, type: 3}
+  m_Name: Attack
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 723
+    y: 176
+    width: 150
+    height: 30
+  id: e0649601-240b-4140-ac71-edd9e15c2480
+  isDefaultState: 0
+  transitions:
+  - {fileID: 11400050}
+  actions:
+  - {fileID: 11400026}
+  - {fileID: 11400030}
+  - {fileID: 11400038}
+--- !u!114 &11400022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 11400010}
+  toState: {fileID: 11400020}
+  conditions:
+  - {fileID: 11400024}
+--- !u!114 &11400024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1c449036b5edb4885e28baae571258, type: 3}
+  m_Name: Distance
+  m_EditorClassIdentifier: 
+  target: Player
+  comparer: 1
+  value: 3
+  scale: {x: 1, y: 1, z: 1}
+--- !u!114 &11400026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c5d1a21bee4bbd4a9b0977f459aba62, type: 3}
+  m_Name: Animator.SetInteger
+  m_EditorClassIdentifier: 
+  gameObject: Owner
+  queue: 0
+  parameterName: Combo
+  value: {fileID: 11400028}
+--- !u!114 &11400028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe3e6979ec380f4998771d87b4e6c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userVariable: 1
+  parameterName: 
+  value: 3
+--- !u!114 &11400030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243e02a27f2ba034783ed1c65251ca2f, type: 3}
+  m_Name: NavMeshAgent.Stop
+  m_EditorClassIdentifier: 
+  gameObject: Owner
+  queue: 0
+--- !u!114 &11400032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe3e6979ec380f4998771d87b4e6c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userVariable: 1
+  parameterName: 
+  value: 0
+--- !u!114 &11400034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe3e6979ec380f4998771d87b4e6c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userVariable: 1
+  parameterName: 
+  value: 0
+--- !u!114 &11400036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1c449036b5edb4885e28baae571258, type: 3}
+  m_Name: Distance
+  m_EditorClassIdentifier: 
+  target: Player
+  comparer: 0
+  value: 5
+  scale: {x: 1, y: 1, z: 1}
+--- !u!114 &11400038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5b21ca5982449a4f82cc38920537a93, type: 3}
+  m_Name: Animator.SetBool
+  m_EditorClassIdentifier: 
+  gameObject: Owner
+  queue: 0
+  value: {fileID: 11400040}
+  parameterName: isRun
+--- !u!114 &11400040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90978b69f7230544c85d1b49657db3d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userVariable: 1
+  parameterName: 
+  value: 0
+--- !u!114 &11400042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1c449036b5edb4885e28baae571258, type: 3}
+  m_Name: Distance
+  m_EditorClassIdentifier: 
+  target: Player
+  comparer: 0
+  value: 5
+  scale: {x: 1, y: 1, z: 1}
+--- !u!114 &11400044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f8edc712d25cf41a6eb662a3494038, type: 3}
+  m_Name: Reset
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 473
+    y: 101
+    width: 150
+    height: 30
+  id: 14a89a70-5d86-479d-88a4-b8771bfd7601
+  isDefaultState: 0
+  transitions:
+  - {fileID: 11400052}
+  actions:
+  - {fileID: 11400046}
+  - {fileID: 11400058}
+--- !u!114 &11400046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c5d1a21bee4bbd4a9b0977f459aba62, type: 3}
+  m_Name: Animator.SetInteger
+  m_EditorClassIdentifier: 
+  gameObject: Owner
+  queue: 0
+  parameterName: Combo
+  value: {fileID: 11400048}
+--- !u!114 &11400048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe3e6979ec380f4998771d87b4e6c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userVariable: 1
+  parameterName: 
+  value: 0
+--- !u!114 &11400050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 11400020}
+  toState: {fileID: 11400044}
+  conditions:
+  - {fileID: 11400036}
+--- !u!114 &11400052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 11400044}
+  toState: {fileID: 11400010}
+  conditions:
+  - {fileID: 11400060}
+--- !u!114 &11400054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 11400002}
+  toState: {fileID: 11400044}
+  conditions:
+  - {fileID: 11400056}
+--- !u!114 &11400056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8564d0a2974112c46921f77a5ac26bfc, type: 3}
+  m_Name: IsName
+  m_EditorClassIdentifier: 
+  layer: 0
+  stateName: hit
+  equals: 1
+--- !u!114 &11400058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243e02a27f2ba034783ed1c65251ca2f, type: 3}
+  m_Name: NavMeshAgent.Stop
+  m_EditorClassIdentifier: 
+  gameObject: Owner
+  queue: 0
+--- !u!114 &11400060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8564d0a2974112c46921f77a5ac26bfc, type: 3}
+  m_Name: IsName
+  m_EditorClassIdentifier: 
+  layer: 0
+  stateName: idle
+  equals: 1

@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 33: {fileID: 3300000}
+  - 23: {fileID: 2300000}
+  - 136: {fileID: 13600000}
+  m_Layer: 0
+  m_Name: RAPIER
+  m_TagString: EnemyWeapon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +28,11 @@ GameObject:
   - 4: {fileID: 400002}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
-  - 143: {fileID: 14300000}
+  - 136: {fileID: 13600002}
+  - 54: {fileID: 5400002}
+  - 95: {fileID: 9500000}
+  - 195: {fileID: 19500000}
+  - 114: {fileID: 11400004}
   m_Layer: 9
   m_Name: EnemyPrefabs
   m_TagString: Enemy
@@ -552,7 +574,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400076}
-  - 95: {fileID: 9500000}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -575,6 +596,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: -.00860820711, y: .00157657964, z: .981084287, w: .193383083}
+  m_LocalPosition: {x: .0659799725, y: -.0184045881, z: .821935236}
+  m_LocalScale: {x: .13677229, y: .13677229, z: .13677229}
+  m_Children: []
+  m_Father: {fileID: 400024}
 --- !u!4 &400002
 Transform:
   m_ObjectHideFlags: 1
@@ -582,7 +614,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: .200000003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400076}
@@ -718,7 +750,8 @@ Transform:
   m_LocalRotation: {x: -.13380307, y: -.724873781, z: .107034847, w: .667231798}
   m_LocalPosition: {x: -.120284133, y: .0192658845, z: .0294467919}
   m_LocalScale: {x: .283948511, y: .283948451, z: .283948541}
-  m_Children: []
+  m_Children:
+  - {fileID: 400000}
   m_Father: {fileID: 400054}
 --- !u!4 &400026
 Transform:
@@ -1030,18 +1063,61 @@ Transform:
   m_Children:
   - {fileID: 400016}
   m_Father: {fileID: 400032}
+--- !u!23 &2300000
+Renderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 557065f3344378b48864331c4278df23, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &3300000
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Mesh: {fileID: 4300000, guid: a8c76a62118172b4a9d512c0fb155c4d, type: 3}
+--- !u!54 &5400002
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 2
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100076}
+  m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3f295a61ef950a449b2eaa6bbd896c4a, type: 3}
   m_Controller: {fileID: 9100000, guid: c64fabba8fc2fcb4cbae4ae3fdb11dd2, type: 2}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_CullingMode: 0
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!114 &11400000
@@ -1096,6 +1172,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   speed: 0
+  WeaponCollider: {fileID: 13600000}
+  enemyAnimator: {fileID: 0}
+  hittedCombo: 0
+  waitCombo: 0
+  comboTime: 0
+  maxComboWait: 1
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ae11acacf3d7c409fbafba2723c9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalController: {fileID: 11400000, guid: e8605cff4dc1c194c973cdd9978477f6, type: 2}
+  controller: {fileID: 0}
+  level: 1
+--- !u!136 &13600000
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 1.26999998
+  m_Height: 33.5
+  m_Direction: 2
+  m_Center: {x: -3.18958342e-07, y: -1.50129563e-06, z: 17.7000008}
+--- !u!136 &13600002
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 4.19999981
+  m_Direction: 1
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1157,20 +1279,26 @@ SkinnedMeshRenderer:
     m_Center: {x: -.230808496, y: -.00023303926, z: .012406528}
     m_Extent: {x: .593265831, y: .382633209, z: .311985523}
   m_DirtyAABB: 0
---- !u!143 &14300000
-CharacterController:
+--- !u!195 &19500000
+NavMeshAgent:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  serializedVersion: 2
-  m_Height: 4
-  m_Radius: 1.20000005
-  m_SlopeLimit: 45
-  m_StepOffset: .300000012
-  m_SkinWidth: .0799999982
-  m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Enabled: 1
+  m_Radius: .5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

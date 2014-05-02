@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
 
 	public Transform HairPlace, weaponPlace;
 
+	public Collider WeaponCollider;
+
 	public static PlayerController Instance;
 	private static PlayerController instance = null;
 	public static PlayerController CekInstance 
@@ -57,7 +59,7 @@ public class PlayerController : MonoBehaviour {
 
 	void On_JoystickMove( MovingJoystick move)
 	{
-		if(!_playerAnim.getAnimBoolVar("isAttack"))
+		if(!_playerAnim.getAnimBoolVar("isAttack") && !_playerAnim.getAnimBoolVar("isHit"))
 		{
 			_playerMovement.Move(move.joystickAxis.x, move.joystickAxis.y, speed);
 			_playerAnim.SetAnimVar("isRun", true);
@@ -112,8 +114,14 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision collisionObject)
+	public void ColliderOnOff()
 	{
+		WeaponCollider.enabled = !WeaponCollider.enabled;
+	}
 
+	void OnTriggerEnter(Collider colliderObject)
+	{
+		if(colliderObject.gameObject.tag == "EnemyWeapon")
+		_playerAnim.beingHit();
 	}
 }

@@ -8,12 +8,12 @@ public class MoveController : MonoBehaviour {
 	private Vector2 absJoyPos;
 
 	private Transform cameraTransform, thisTransform;
-	private CharacterController playerController;
+	private Rigidbody playerController;
 
 	void Awake () {
 
 		thisTransform = transform;
-		playerController = this.GetComponent<CharacterController>();
+		playerController = this.GetComponent<Rigidbody>();
 	}
 
 	void Update()
@@ -35,11 +35,16 @@ public class MoveController : MonoBehaviour {
 		thisTransform.forward = movement;
 
 		movement *= speed * 1;
-		
-		movement += Physics.gravity;
-		movement *= Time.deltaTime;
 
-		playerController.Move( movement*speed );
+		//Kalo pakeCharacterController
+		/*movement += Physics.gravity;
+		movement *= Time.deltaTime;
+		playerController.Move(movement*speed );
+		 */
+
+		//Kalo pake Rigidbody
+		movement *= Time.deltaTime;
+		playerController.MovePosition( playerController.position + movement*speed );
 	}
 
 

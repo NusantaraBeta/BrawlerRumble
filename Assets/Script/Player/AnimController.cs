@@ -8,12 +8,13 @@ public class AnimController : MonoBehaviour {
 
 	int idleState = Animator.StringToHash("Base Layer.idle");	
 	int specialAttackState = Animator.StringToHash("Base Layer.specialAttack");	
+	int hitState = Animator.StringToHash("Base Layer.hit");	
 
 	public int comboNumber;
 
 	void Awake()
 	{
-		PlayerAnimator = GetComponentInChildren<Animator>();;
+		PlayerAnimator = GetComponent<Animator>();
 	}
 
 	public void SetAnimVar(string namaVar, bool nilai)
@@ -34,6 +35,11 @@ public class AnimController : MonoBehaviour {
 	public int getAnimIntVar(string namaVar)
 	{
 		return PlayerAnimator.GetInteger(namaVar);
+	}
+
+	public void beingHit()
+	{
+		PlayerAnimator.SetBool("isHit",true);
 	}
 
 	public void AttackCombo()
@@ -59,8 +65,8 @@ public class AnimController : MonoBehaviour {
 				SetAnimVar("isAttack",false);
 
 			}
-
 		}
+
 
 		nextBaseState = PlayerAnimator.GetNextAnimatorStateInfo(0);
 		if(nextBaseState.nameHash == idleState)
@@ -68,6 +74,10 @@ public class AnimController : MonoBehaviour {
 				comboNumber = 0;
 				SetAnimVar("Combo",comboNumber);
 				SetAnimVar("specialAttack",false);
+		}
+		else if(nextBaseState.nameHash == hitState)
+		{
+			SetAnimVar("isHit",false);
 		}
 		
 	}
